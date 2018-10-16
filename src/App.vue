@@ -2,6 +2,9 @@
   <div id="app">
     <div>
       Change Language to: <locale-switcher/>
+      <p>
+        {{ $t('meta') }}
+      </p>
     </div>
     <router-view></router-view>
   </div>
