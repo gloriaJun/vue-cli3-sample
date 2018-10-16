@@ -5,29 +5,30 @@
 </template>
 
 <script>
-const ErrorObject = Object.freeze({
-  401: {
-    icon: 'error',
-    message: 'UnAuthorized',
-    description: 'access is denied due to invalid credentials.',
-  },
-  403: {
-    icon: '403.png',
-    type: 'img',
-    message: 'Forbidden',
-    description: 'Access is Allowed only for Registered User.',
-  },
-  404: {
-    icon: 'block',
-    message: 'Oops! You\'re lost',
-    description: 'We can not find the page you\'re looking for.',
-  },
-  500: {
-    icon: 'settings',
-    message: 'Opps! Internal Server Error!',
-    description: 'Unfortunately we\'re having trouble loading the page you are looking for.<br/>Please come back in a while.',
-  },
-});
+// const ErrorObject = Object.freeze({
+//   401: {
+//     icon: 'error',
+//     message: 'UnAuthorized',
+//     description: 'access is denied due to invalid credentials.',
+//   },
+//   403: {
+//     icon: '403.png',
+//     type: 'img',
+//     message: 'Forbidden',
+//     description: 'Access is Allowed only for Registered User.',
+//   },
+//   404: {
+//     icon: 'block',
+//     message: 'Oops! You\'re lost',
+//     description: 'We can not find the page you\'re looking for.',
+//   },
+//   500: {
+//     icon: 'settings',
+//     message: 'Opps! Internal Server Error!',
+//     description: 'Unfortunately we\'re having trouble loading the page you are looking for.
+// <br/>Please come back in a while.',
+//   },
+// });
 
 export default {
   name: 'ErrorPage',
@@ -38,7 +39,7 @@ export default {
   },
   data() {
     return {
-      error: ErrorObject[this.statusCode],
+      // error: ErrorObject[this.statusCode],
     };
   },
   computed: {
@@ -53,7 +54,8 @@ export default {
     // },
   },
   mounted() {
-    console.log(this.$route, this.error);
+    // console.log(this.$route, this.error);
+    console.log('error page');
   },
   methods: {
     /**

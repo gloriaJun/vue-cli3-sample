@@ -16,34 +16,33 @@ const Translation = {
   set currentLanguage(lang) {
     i18n.locale = lang;
   },
-  // /**
-  //  * Gets the first supported language that matches the user's
-  //  * @return {String}
-  //  */
-  // getUserSupportedLang () {
-  //   const userPreferredLang = Trans.getUserLang()
-  //
-  //   // Check if user preferred browser lang is supported
-  //   if (Trans.isLangSupported(userPreferredLang.lang)) {
-  //     return userPreferredLang.lang
-  //   }
-  //   // Check if user preferred lang without the ISO is supported
-  //   if (Trans.isLangSupported(userPreferredLang.langNoISO)) {
-  //     return userPreferredLang.langNoISO
-  //   }
-  //   return Trans.defaultLanguage
-  // },
-  // /**
-  //  * Returns the users preferred language
-  //  */
-  // getUserLang () {
-  //   const lang = window.navigator.language
-  // || window.navigator.userLanguage || Trans.defaultLanguage
-  //   return {
-  //     lang: lang,
-  //     langNoISO: lang.split('-')[0]
-  //   }
-  // },
+  /**
+   * Gets the first supported language that matches the user's
+   * @return {String}
+   */
+  getUserSupportedLang() {
+    const userPreferredLang = Translation.getUserLang();
+
+    // Check if user preferred browser lang is supported
+    if (Translation.isLangSupported(userPreferredLang.locale)) {
+      return userPreferredLang.locale;
+    }
+    // Check if user preferred lang without the ISO is supported
+    if (Translation.isLangSupported(userPreferredLang.localeNoISO)) {
+      return userPreferredLang.localeNoISO;
+    }
+    return Translation.defaultLanguage;
+  },
+  /**
+   * Returns the users preferred language
+   */
+  getUserLang() {
+    const lang = window.navigator.language || Translation.defaultLanguage;
+    return {
+      locale: lang,
+      localeNoISO: lang.split('-')[0],
+    };
+  },
   // /**
   //  * Sets the language to various services (axios, the html tag etc)
   //  * @param {String} lang
@@ -105,19 +104,19 @@ const Translation = {
   isLangSupported(lang) {
     return Translation.supportedLanguages.includes(lang);
   },
-  // /**
-  //  * Checks if the route's param is supported, if not, redirects to the first supported one.
-  //  * @param {Route} to
-  //  * @param {Route} from
-  //  * @param {Function} next
-  //  * @return {*}
-  //  */
-  // routeMiddleware (to, from, next) {
-  //   // Load async message files here
-  //   const lang = to.params.lang
-  //   if (!Trans.isLangSupported(lang)) return next(Trans.getUserSupportedLang())
-  //   return Trans.changeLanguage(lang).then(() => next())
-  // }
+  /**
+   * Checks if the route's param is supported, if not, redirects to the first supported one.
+   * @param {Route} to
+   * @param {Route} from
+   * @param {Function} next
+   * @return {*}
+   */
+  routeMiddleware(to, from, next) {
+    // Load async message files here
+    const { lang } = to.params;
+    if (!Translation.isLangSupported(lang)) return next(Translation.getUserSupportedLang());
+    return Translation.changeLanguage(lang).then(() => next());
+  },
 };
 
 export default Translation;

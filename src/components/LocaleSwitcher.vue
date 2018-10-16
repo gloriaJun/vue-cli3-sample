@@ -27,9 +27,9 @@ export default {
   },
   methods: {
     onChangeLanguage(lang) {
+      const to = this.$router.resolve({ params: { lang } });
       Translation.changeLanguage(lang).then(() => {
-        console.log('locale change to ', lang);
-        console.log(this.$router);
+        this.$router.push(to.location);
       });
     },
   },
