@@ -1,5 +1,4 @@
-# Vue Boilerplate Template
-based on vue-cli3
+Scaffolding based on vue-cli3
 
 ## Dependent plugin list
 * vue2
