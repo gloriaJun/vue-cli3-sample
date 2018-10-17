@@ -1,14 +1,14 @@
 <template>
-  <router-view/>
+  <div class="app">
+    <router-view/>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'App',
-  mounted() {
-  },
 };
 </script>
 
-<style lang="scss">
+<style>
 </style>

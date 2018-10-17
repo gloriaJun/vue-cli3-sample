@@ -7,6 +7,7 @@
         :key="lang"
         @click="onChangeLanguage(lang)">{{ lang }}</li>
     </ul>
+    <q-btn>Button</q-btn>
   </div>
 </template>
 
