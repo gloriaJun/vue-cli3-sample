@@ -8,10 +8,7 @@ function load(component) {
 export default [
   {
     path: '/:lang',
-    // component: {
-    //   template: '<router-view></router-view>',
-    // },
-    component: () => import('@/components/Layout.vue'),
+    component: () => import('@/layouts/DefaultLayout.vue'),
     beforeEnter: Translation.routeMiddleware,
     children: [
       {

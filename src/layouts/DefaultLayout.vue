@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import LocaleSwitcher from './LocaleSwitcher.vue';
+import LocaleSwitcher from '../components/LocaleSwitcher.vue';
 
 export default {
   name: 'Layout',
