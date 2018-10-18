@@ -3,4 +3,7 @@ export default {
   },
   user: {
   },
+  footer: {
+    copyright: '@ 2018',
+  },
 };
