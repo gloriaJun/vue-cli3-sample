@@ -1,9 +1,9 @@
 export default {
   brand: {
-    label: 'Aiden IOT',
-    router: {
-      name: 'Home',
-    },
+    label: 'BrandName',
+    // router: {
+    //   name: 'Home',
+    // },
   },
   loginUser: [
     {

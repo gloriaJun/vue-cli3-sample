@@ -1,13 +1,10 @@
 <template>
   <q-layout view="hHh Lpr lFf">
-
-    <app-header/>
-    <app-drawer/>
+    <app-header :width="width"/>
+    <app-drawer :width="width"/>
 
     <q-page-container>
-      Change Language to: <locale-switcher/>
-      <p>{{ $t('meta') }}</p>
-      <router-view class="app-content"/>
+      <router-view/>
     </q-page-container>
 
     <app-footer/>
@@ -18,7 +15,6 @@
 import AppHeader from './components/AppHeader.vue';
 import AppDrawer from './components/AppDrawer.vue';
 import AppFooter from './components/AppFooter.vue';
-import LocaleSwitcher from '../components/LocaleSwitcher.vue';
 
 export default {
   name: 'DefaultLayout',
@@ -26,10 +22,10 @@ export default {
     AppHeader,
     AppDrawer,
     AppFooter,
-    LocaleSwitcher,
   },
   data() {
     return {
+      width: 200,
     };
   },
 };
