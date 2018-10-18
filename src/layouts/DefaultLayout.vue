@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh Lpr lFf">
-    <app-header :width="width"/>
-    <app-drawer :width="width"/>
+    <app-header/>
+    <app-drawer/>
 
     <q-page-container>
       <router-view/>
@@ -25,7 +25,6 @@ export default {
   },
   data() {
     return {
-      width: 200,
     };
   },
 };

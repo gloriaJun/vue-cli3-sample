@@ -19,7 +19,28 @@
         icon="fas fa-angle-left"
         @click="setDrawerMini(!mini)"/>
       <q-toolbar-title/>
-      <span class="flag-icon flag-icon-kr"/>
+
+      <div
+        class="flag-icon flag-icon-kr"
+        @click="showing = !showing">
+        <q-popover
+          v-model="showing">
+          <q-list highlight>
+            <q-item>
+              <q-item-side class="flag-icon flag-icon-kr"/>
+              <q-item-main>
+                <q-item-tile label>Photos</q-item-tile>
+              </q-item-main>
+            </q-item>
+            <q-item>
+              <q-item-side icon="assignment"/>
+              <q-item-main>
+                <q-item-tile label>Photos</q-item-tile>
+              </q-item-main>
+            </q-item>
+          </q-list>
+        </q-popover>
+      </div>
     </q-toolbar>
   </q-layout-header>
 </template>
@@ -30,13 +51,10 @@ import { mapMutations, mapGetters } from 'vuex';
 export default {
   name: 'AppHeader',
   props: {
-    width: {
-      type: Number,
-      default: 200,
-    },
   },
   data() {
     return {
+      showing: false,
     };
   },
   computed: {

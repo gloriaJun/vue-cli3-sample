@@ -19,18 +19,16 @@ export default {
       },
     },
   ],
-  locales: [
-    {
+  locales: {
+    ko: {
       label: '한국어',
-      value: 'ko',
       icon: 'flag_ko.png',
     },
-    {
+    en: {
       label: '영어',
-      value: 'en',
       icon: 'flag_en.png',
     },
-  ],
+  },
   nav: [
     {
       label: '매뉴1',

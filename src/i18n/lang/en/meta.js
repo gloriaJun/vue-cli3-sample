@@ -19,18 +19,14 @@ export default {
       },
     },
   ],
-  locales: [
-    {
+  locales: {
+    ko: {
       label: 'Korean',
-      value: 'ko',
-      icon: 'flag_ko.png',
     },
-    {
+    en: {
       label: 'English',
-      value: 'en',
-      icon: 'flag_en.png',
     },
-  ],
+  },
   nav: [
     {
       label: 'Users',
