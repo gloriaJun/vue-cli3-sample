@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "flag-icon-css": "^3.2.0",
     "lodash": "^4.17.11",
     "quasar-extras": "^2.0.4",
     "quasar-framework": "^0.17.0",

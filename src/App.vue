@@ -10,5 +10,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang="stylus">
+@import './styles/quasar.styl';
 </style>
