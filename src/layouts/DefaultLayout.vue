@@ -1,19 +1,20 @@
 <template>
   <v-app>
     <app-header/>
+    <app-sidebar/>
   </v-app>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue';
-// import AppDrawer from './components/AppDrawer.vue';
+import AppSidebar from './components/AppSidebar.vue';
 // import AppFooter from './components/AppFooter.vue';
 
 export default {
   name: 'DefaultLayout',
   components: {
     AppHeader,
-    // AppDrawer,
+    AppSidebar,
     // AppFooter,
   },
   data() {
