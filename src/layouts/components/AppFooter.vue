@@ -2,7 +2,8 @@
   <v-footer
     color="grey lighten-2"
     app
-    inset>
+    inset
+  >
     <span v-html="$t('app.footer.copyright')"/>
   </v-footer>
 </template>

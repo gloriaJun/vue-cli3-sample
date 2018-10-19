@@ -1,13 +1,22 @@
 <template>
-  <div class="locale-switcher">
-    locale switcher : {{ currentLanguage }}
-    <ul>
-      <li
+  <v-menu offset-y>
+    <v-btn
+      slot="activator"
+      dark
+      icon
+    >
+      <v-icon>fas fa-globe</v-icon>
+    </v-btn>
+    <v-list>
+      <v-list-tile
         v-for="(lang, key) in supportedLanguages"
         :key="key"
-        @click="onChangeLanguage(key)">{{ lang.label }}</li>
-    </ul>
-  </div>
+        @click="onChangeLanguage(key)"
+      >
+        <v-list-tile-title>{{ lang.label }}</v-list-tile-title>
+      </v-list-tile>
+    </v-list>
+  </v-menu>
 </template>
 
 <script>

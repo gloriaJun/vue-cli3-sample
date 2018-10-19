@@ -4,7 +4,8 @@
     color="blue"
     dark
     app
-    fixed>
+    fixed
+  >
     <v-toolbar-title>
       <v-toolbar-side-icon @click.stop="setDrawer(!drawer)"/>
       <span>
@@ -12,14 +13,22 @@
       </span>
     </v-toolbar-title>
 
+    <v-spacer></v-spacer>
+
+    <locale-switcher/>
+
   </v-toolbar>
 </template>
 
 <script>
 import { mapMutations, mapGetters } from 'vuex';
+import LocaleSwitcher from '@/components/LocaleSwitcher.vue';
 
 export default {
   name: 'AppDrawer',
+  components: {
+    LocaleSwitcher,
+  },
   computed: {
     ...mapGetters('app', {
       drawer: 'getSidebarDrawer',
