@@ -1,9 +1,9 @@
 <template>
-  <div class="error-page">
+  <q-page>
     This is Dashboard Page
 
     <p>{{ $t('meta') }}</p>
-  </div>
+  </q-page>
 </template>
 
 <script>
