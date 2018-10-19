@@ -1,5 +1,10 @@
-// import Vue from 'vue';
-//
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+
+Vue.use(Vuetify, {
+  iconfont: 'fa',
+});
+
 // /* javascript library */
 // import Lodash from './lodash';
 // import Moment from './moment';
