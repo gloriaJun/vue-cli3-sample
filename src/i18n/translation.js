@@ -43,17 +43,16 @@ const Translation = {
       localeNoISO: lang.split('-')[0],
     };
   },
-  // /**
-  //  * Sets the language to various services (axios, the html tag etc)
-  //  * @param {String} lang
-  //  * @return {String} lang
-  //  */
-  // setI18nLanguageInServices(lang) {
-  //   // Translation.currentLanguage = lang;
-  //   // axios.defaults.headers.common['Accept-Language'] = lang
-  //   // document.querySelector('html').setAttribute('lang', lang);
-  //   // return lang;
-  // },
+  /**
+   * Sets the language to various services (axios, the html tag etc)
+   * @param {String} lang
+   * @return {String} lang
+   */
+  setI18nLanguageInServices(lang) {
+    Translation.currentLanguage = lang;
+    // axios.defaults.headers.common['Accept-Language'] = lang
+    document.querySelector('html').setAttribute('lang', lang);
+  },
   /**
    * Loads new translation messages and changes the language when finished
    * @param lang
@@ -66,7 +65,7 @@ const Translation = {
     // change language
     const message = await Translation.genLanguageMessage(lang);
     i18n.setLocaleMessage(lang, message);
-    Translation.currentLanguage = lang;
+    Translation.setI18nLanguageInServices(lang);
     return lang;
   },
   /**
@@ -102,7 +101,7 @@ const Translation = {
    * @return {boolean}
    */
   isLangSupported(lang) {
-    return Translation.supportedLanguages.includes(lang);
+    return Object.keys(Translation.supportedLanguages).includes(lang);
   },
   /**
    * Checks if the route's param is supported, if not, redirects to the first supported one.

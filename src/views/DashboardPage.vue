@@ -1,6 +1,9 @@
 <template>
   <div class="error-page">
     This is Dashboard Page
+    <p>
+      {{ $t('meta') }}
+    </p>
   </div>
 </template>
 

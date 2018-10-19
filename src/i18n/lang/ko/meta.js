@@ -1,9 +1,9 @@
 export default {
   brand: {
-    label: 'Aiden IOT',
-    router: {
-      name: 'Home',
-    },
+    label: 'BrandName',
+    // router: {
+    //   name: 'Home',
+    // },
   },
   loginUser: [
     {
@@ -17,18 +17,6 @@ export default {
       router: {
         name: 'Logout',
       },
-    },
-  ],
-  locales: [
-    {
-      label: '한국어',
-      value: 'ko',
-      icon: 'flag_ko.png',
-    },
-    {
-      label: '영어',
-      value: 'en',
-      icon: 'flag_en.png',
     },
   ],
   nav: [
