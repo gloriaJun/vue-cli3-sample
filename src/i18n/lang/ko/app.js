@@ -4,6 +4,6 @@ export default {
   user: {
   },
   footer: {
-    copyright: '@ 2018',
+    copyright: ' &copy; 2018',
   },
 };

@@ -1,12 +1,15 @@
 <template>
-  <div class="app-footer">
-    {{ $t('app.footer.copyright') }}
-  </div>
+  <v-footer
+    color="grey lighten-2"
+    app
+    inset>
+    <span v-html="$t('app.footer.copyright')"/>
+  </v-footer>
 </template>
 
 <script>
 export default {
-  name: 'AppHeader',
+  name: 'AppFooter',
   props: {
   },
   computed: {
@@ -17,7 +20,4 @@ export default {
 </script>
 
 <style scoped>
-  .app-footer {
-    background-color: #eeeeee;
-  }
 </style>
