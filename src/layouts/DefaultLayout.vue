@@ -1,27 +1,27 @@
 <template>
-    <div id="app">
-        <div>
-            Change Language to: <locale-switcher/>
-            <p>
-                {{ $t('meta') }}
-            </p>
-        </div>
-        <div class="app-content">
-            <router-view/>
-        </div>
+  <div id="app">
+    <app-header/>
+
+    <div class="app-content">
+      <router-view/>
     </div>
+
+    <app-footer/>
+  </div>
 </template>
 
 <script>
-import LocaleSwitcher from '../components/LocaleSwitcher.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   name: 'Layout',
   components: {
-    LocaleSwitcher,
+    AppHeader,
+    AppFooter,
   },
 };
 </script>
 
-<style lang="scss">
+<style scoped>
 </style>

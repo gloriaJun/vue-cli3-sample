@@ -3,9 +3,9 @@
     locale switcher : {{ currentLanguage }}
     <ul>
       <li
-        v-for="lang in supportedLanguages"
-        :key="lang"
-        @click="onChangeLanguage(lang)">{{ lang }}</li>
+        v-for="(lang, key) in supportedLanguages"
+        :key="key"
+        @click="onChangeLanguage(key)">{{ lang.label }}</li>
     </ul>
   </div>
 </template>
@@ -36,5 +36,5 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped>
 </style>
