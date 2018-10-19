@@ -8,6 +8,10 @@ Scaffolding based on vue-cli3
 * axios
 * lodash
 
+#### branches
+###### quasar 
+- set default layout by using quasar framework
+
 
 ## Project setup
 ```
