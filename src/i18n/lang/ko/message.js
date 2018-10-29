@@ -7,4 +7,9 @@ export default {
   },
   validator: {
   },
+  hint: {
+    length: {
+      minMax: '{0} ~ {1} 사이의 글자를 입력하세요.',
+    },
+  },
 };
