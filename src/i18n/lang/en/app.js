@@ -1,4 +1,6 @@
 export default {
+  brand: 'BrandName',
+
   button: {
     login: 'Login',
     logout: 'Logout',
@@ -16,7 +18,13 @@ export default {
   },
 
   join: {
-    title: 'Create Account',
+    title: 'Join',
+    create: 'Create Account',
+    label: {
+      username: 'username',
+      password: 'password',
+      confirmPassword: 'password confirmation',
+    },
   },
 
   changePassword: {
@@ -40,5 +48,12 @@ export default {
       username: 'username',
       password: 'password',
     },
+  },
+
+  /**
+   * footer
+   */
+  footer: {
+    copyright: ' Copyright &copy; <strong>BrandName</strong>. All Right Reserved',
   },
 };

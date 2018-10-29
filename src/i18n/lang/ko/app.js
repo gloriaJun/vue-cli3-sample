@@ -1,6 +1,4 @@
 export default {
-  brand: 'BrandName',
-
   button: {
     login: '로그인',
     logout: '로그아웃',
@@ -48,12 +46,5 @@ export default {
       username: '사용자 아이디',
       password: '패스워드',
     },
-  },
-
-  /**
-   * footer
-  */
-  footer: {
-    copyright: ' Copyright &copy; <strong>BrandName</strong>. All Right Reserved',
   },
 };
