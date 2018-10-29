@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import { DEFAULT_LANGUAGE, FALLBACK_LANGUAGE } from './constants';
-import ko from './lang/ko';
+import en from './lang/en';
 
 Vue.use(VueI18n);
 
@@ -9,7 +9,7 @@ Vue.use(VueI18n);
 const i18n = new VueI18n({
   locale: DEFAULT_LANGUAGE,
   fallbackLocale: FALLBACK_LANGUAGE,
-  messages: { ko },
+  messages: { en },
 });
 
 export default i18n;
