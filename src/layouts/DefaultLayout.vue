@@ -1,14 +1,19 @@
 <template>
   <v-app>
-    <app-header/>
-    <app-sidebar/>
+    <template v-if="!isFullScreen">
+      <app-header/>
+      <app-sidebar/>
 
-    <v-content>
-      <v-container fluid>
-        <router-view/>
-      </v-container>
-    </v-content>
+      <v-content>
+        <v-container fluid>
+          <router-view/>
+        </v-container>
+      </v-content>
 
+    </template>
+    <template v-else>
+      <router-view/>
+    </template>
     <app-footer/>
   </v-app>
 </template>
@@ -29,8 +34,13 @@ export default {
     return {
     };
   },
+  computed: {
+    isFullScreen() {
+      return this.$route.meta.fullScreen;
+    },
+  },
 };
 </script>
 
-<style >
+<style lang="stylus">
 </style>

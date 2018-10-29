@@ -1,11 +1,16 @@
 <template>
-  <v-menu offset-y>
+  <v-menu
+    bottom
+    offset-y
+    left
+    attach
+    class="locale-switcher"
+  >
     <v-btn
       slot="activator"
-      dark
-      icon
+      flat
     >
-      <v-icon>fas fa-globe</v-icon>
+      <flag-icon :locale="currentLanguage"/>
     </v-btn>
     <v-list>
       <v-list-tile
@@ -13,6 +18,10 @@
         :key="key"
         @click="onChangeLanguage(key)"
       >
+        <v-list-tile-action>
+          <flag-icon :locale="key"/>
+        </v-list-tile-action>
+
         <v-list-tile-title>{{ lang.label }}</v-list-tile-title>
       </v-list-tile>
     </v-list>
@@ -21,9 +30,11 @@
 
 <script>
 import Translation from '@/i18n/translation';
+import FlagIcon from '@/components/Icon/FlagIcon.vue';
 
 export default {
   name: 'LocaleSwitcher',
+  components: { FlagIcon },
   props: {
   },
   computed: {
@@ -46,4 +57,11 @@ export default {
 </script>
 
 <style scoped>
+.locale-switcher .flag-icon {
+  width: 26px;
+  height: 26px;
+}
+.locale-switcher .v-btn {
+  min-width: 48px;
+}
 </style>
