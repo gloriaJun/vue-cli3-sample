@@ -7,7 +7,7 @@ function load(component) {
 
 export default [
   {
-    path: '/:lang',
+    path: '/',
     component: () => import('@/layouts/DefaultLayout.vue'),
     beforeEnter: Translation.routeMiddleware,
     children: [
@@ -15,23 +15,31 @@ export default [
         path: '',
         name: 'Dashboard',
         component: load('DashboardPage'),
+        meta: { requiresAuth: true },
       },
+
+      // 사용자 관련
+      {
+        path: 'users',
+        name: 'Users',
+        component: load('users/List'),
+        meta: { requiresAuth: true },
+      },
+
+      // Login Page
       {
         path: 'login',
         name: 'Login',
         component: load('LoginPage'),
+        meta: { fullScreen: true },
       },
+
+      // Error Page
       {
         path: '*',
         component: load('ErrorPage'),
+        meta: { fullScreen: true },
       },
     ],
-  },
-  {
-    // Redirect user to supported lang version.
-    path: '*',
-    redirect() {
-      return Translation.getUserSupportedLang();
-    },
   },
 ];

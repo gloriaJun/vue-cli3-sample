@@ -1,5 +1,5 @@
 // import axios from 'axios'
-import { merge } from 'lodash';
+import { merge, cloneDeep } from 'lodash';
 import Cookies from 'js-cookie';
 import { DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES } from './constants';
 import i18n from './index';
@@ -85,7 +85,7 @@ const Translation = (() => {
         let message = await Translation.loadLanguageFile(lang);
         if (lang !== DEFAULT_LANGUAGE) {
           const defaultMessage = await Translation.loadLanguageFile(DEFAULT_LANGUAGE);
-          message = merge(_.cloneDeep(defaultMessage), message);
+          message = merge(cloneDeep(defaultMessage), message);
         }
         resolve(message);
       });

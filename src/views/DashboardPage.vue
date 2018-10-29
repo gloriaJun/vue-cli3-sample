@@ -2,7 +2,7 @@
   <div class="error-page">
     This is Dashboard Page
     <p>
-      {{ $t('meta') }}
+      {{ $t('app') }}
     </p>
   </div>
 </template>
